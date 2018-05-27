@@ -25,3 +25,13 @@ Glide will install all packages into a vendor directory, which can be gitignore-
 docker run --rm -it -p 8080:8080 -v $(pwd):/go/src/app go-docker-dev bash
 /go/src/app# glide install
 ```
+
+- live reloading
+```
+docker build -t go-docker-dev .
+docker run --rm -it -p 8080:8080 -v $(pwd):/go/src/app go-docker-dev bash
+/go/src/app# gin --path src --port 8080 run main.go
+```
+
+All edits in src directory will trigger a rebuild and changes will be available live at http://localhost:8080.
+
