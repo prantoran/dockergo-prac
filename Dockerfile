@@ -1,6 +1,8 @@
 FROM golang:1.8.5-jessie
 # install glide
 RUN go get github.com/Masterminds/glide
+# install gin
+RUN go get github.com/codegangsta/gin
 # create a working directory
 WORKDIR /go/src/app
 # add glide.yaml and glide.lock
